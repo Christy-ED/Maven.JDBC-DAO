@@ -3,7 +3,7 @@ package models;
 public class Car {
 
     private Integer id;
-    private String name;
+    private String make;
     private String model;
     private String color;
     private Integer vin;
@@ -13,9 +13,9 @@ public class Car {
 
     }
 
-    public Car(String name, String model,Integer year,String color, Integer vin, Integer id){
+    public Car(String make, String model,Integer year,String color, Integer vin, Integer id){
         this.id = id;
-        this.name = name;
+        this.make = make;
         this.model = model;
         this.color = color;
         this.vin = vin;
@@ -30,12 +30,20 @@ public class Car {
         this.id = id;
     }
 
-    public String getName(String s) {
-        return name;
+    public String getMake(String s) {
+        return make;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public void setMake(String name) {
+        this.make = name;
     }
 
     public String getModel(String s) {

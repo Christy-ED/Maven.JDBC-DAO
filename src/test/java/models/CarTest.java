@@ -10,12 +10,12 @@ public class CarTest {
     @Test
     public void testCar(){
         Integer id = 0;
-        String name = "";
+        String make = "";
         String model = "";
         String color = "";
         Integer vin = 0;
         Integer year = 0;
-        Car car = new Car(name,  model, year, color,  vin,  id);
+        Car car = new Car(make,  model, year, color,  vin,  id);
 
         assertNotNull(car);
 
@@ -38,7 +38,7 @@ public class CarTest {
     public void testGetName() {
         String name = "";
         Car car = new Car();
-        car.getName("");
+        car.getMake("");
         assertNotNull(name);
 
 
