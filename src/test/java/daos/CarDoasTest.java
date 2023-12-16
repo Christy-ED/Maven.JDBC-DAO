@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.concurrent.CompletionStage;
+
 
 import static org.junit.Assert.assertNotNull;
 
@@ -15,7 +15,7 @@ public  class CarDoasTest {
     public void testFindById(){
 
     CarDao car = new CarDao();
-     Integer id = 8;
+     Integer id = 8 ;
      Car actual = car.findById(id);
      Assert.assertNotNull(actual);
     }
@@ -44,10 +44,17 @@ public  class CarDoasTest {
     }
 
     @Test
-    CarDao car = new CarDao();
+    public void testCreate(){
+        CarDao car = new CarDao();
+        Integer id = 7;
+        String make = "toyato";
+        String model = "SUV";
+        String color = "white";
+        Integer vin = 7867891;
+        Integer year = 2021;
+        Car dto = new Car(make, model, year, color, vin, id);
+        assertNotNull(car.create(dto));
 
-
-
-
+    }
 
 }

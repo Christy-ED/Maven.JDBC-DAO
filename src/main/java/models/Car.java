@@ -1,6 +1,6 @@
 package models;
 
-public class Car {
+public class Car implements CarDto {
 
     private Integer id;
     private String make;
@@ -22,7 +22,7 @@ public class Car {
         this.year = year;
     }
 
-    public Integer getId() {
+    public int getId() {
         return this.id;
     }
 

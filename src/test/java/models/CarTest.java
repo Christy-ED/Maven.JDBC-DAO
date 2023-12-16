@@ -38,20 +38,17 @@ public class CarTest {
     public void testGetName() {
         String name = "";
         Car car = new Car();
-       // car.getMake("");
+        car.getMake("");
         assertNotNull(name);
 
 
     }
 
-
-
-
     @Test
     public void testGetModel(){
         String model = "";
         Car car = new Car();
-       // car.getModel("");
+        car.getModel("");
         assertNotNull(model);
 
 

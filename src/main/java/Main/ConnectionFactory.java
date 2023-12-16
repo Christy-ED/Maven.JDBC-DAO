@@ -32,12 +32,15 @@ import java.sql.SQLException;
 
         /**
          * Test Connection
-         */
-        public static void main(String[] args) {
-            Connection connection = ConnectionFactory.getConnection();
-        }
+//         */
+//       public static void main(String[] args) {
+//            Connection connection = ConnectionFactory.getConnection();
+//        }
 
     }
+
+
+
 
 
 

@@ -96,13 +96,14 @@ public abstract class CarDaos {
         Connection connection = ConnectionFactory.getConnection();
 
         try {
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO strorage VALUES (NULL, ?, ?, ?)");
-            ps.setString(1, dto.getMake());
-            ps.setString(2, dto.getModel());
-            ps.setString(3, dto.getColor());
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO strorage VALUES (?, ?, ?, ?, ?, ?)");
+            ps.setInt(1, dto.getId());
+            ps.setString(2, dto.getMake());
+            ps.setString(3, dto.getModel());
             ps.setInt(4, dto.getYear());
-            ps.setInt(5, dto.getVin());
-            ps.setInt(6, dto.getId());
+            ps.setString(5, dto.getColor());
+            ps.setInt(6, dto.getVin());
+
             int i = ps.executeUpdate();
 
             if(i == 1) {
@@ -119,7 +120,19 @@ public abstract class CarDaos {
 
 
     public void delete(int id){
+        Connection connection = ConnectionFactory.getConnection();
+        try {
+            Statement stmt = connection.createStatement();
+            int i = stmt.executeUpdate("DELETE FROM strorage WHERE id=" + id);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
 
     }
+       }
 
-}
+
+
+
