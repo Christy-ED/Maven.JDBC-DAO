@@ -5,6 +5,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.concurrent.CompletionStage;
+
+import static org.junit.Assert.assertNotNull;
 
 public  class CarDoasTest {
 
@@ -24,6 +27,27 @@ public  class CarDoasTest {
         Assert.assertTrue(!carList.isEmpty());
 
     }
+
+
+    @Test
+    public void testCarUpdate(){
+        CarDao car = new CarDao();
+        Integer id = 9;
+        String make = "toyato";
+        String model = "SUV";
+        String color = "white";
+        Integer vin = 7867891;
+        Integer year = 2023;
+        Car dto = new Car(make, model, year, color, vin, id);
+        assertNotNull(car.update(dto));
+
+    }
+
+    @Test
+    CarDao car = new CarDao();
+
+
+
 
 
 }

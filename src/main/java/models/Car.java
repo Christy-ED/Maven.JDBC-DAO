@@ -22,15 +22,15 @@ public class Car {
         this.year = year;
     }
 
-    public Integer getId(Integer id) {
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(int id) {
+        this.id = this.id;
     }
 
-    public String getMake(String s) {
+    public String getMake() {
         return make;
     }
 
@@ -46,7 +46,7 @@ public class Car {
         this.make = name;
     }
 
-    public String getModel(String s) {
+    public String getModel() {
         return model;
     }
 

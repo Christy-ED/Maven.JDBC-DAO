@@ -70,28 +70,53 @@ public abstract class CarDaos {
         Connection connection = ConnectionFactory.getConnection();
 
         try {
-            PreparedStatement ps = connection.prepareStatement("UPDATE strorage SET make=?, pass=?, model=? WHERE id=?");
+            PreparedStatement ps = connection.prepareStatement("UPDATE strorage SET make=?, model=?, color=?, year=?, vin=? WHERE id=?");
             ps.setString(1, dto.getMake());
-            ps.setString(2, user.getPass());
-            ps.setInt(3, user.getAge());
-            ps.setInt(4, user.getId());
+            ps.setString(2, dto.getModel());
+            ps.setString(3, dto.getColor());
+            ps.setInt(4, dto.getYear());
+            ps.setInt(5, dto.getVin());
+            ps.setInt(6, dto.getId());
             int i = ps.executeUpdate();
 
             if(i == 1) {
-                return true;
+                return dto;
             }
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
 
-        return false;
-    }
-    }
-
-    public Car create(Car dto){
         return null;
     }
+
+
+    public Car create(Car dto){
+
+        Connection connection = ConnectionFactory.getConnection();
+
+        try {
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO strorage VALUES (NULL, ?, ?, ?)");
+            ps.setString(1, dto.getMake());
+            ps.setString(2, dto.getModel());
+            ps.setString(3, dto.getColor());
+            ps.setInt(4, dto.getYear());
+            ps.setInt(5, dto.getVin());
+            ps.setInt(6, dto.getId());
+            int i = ps.executeUpdate();
+
+            if(i == 1) {
+                return dto;
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
+    }
+
+
 
     public void delete(int id){
 

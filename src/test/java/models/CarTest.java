@@ -27,7 +27,7 @@ public class CarTest {
         Integer id = 0;
 
         Car car = new Car();
-        car.getId(id);
+        car.getId();
         Assert.assertNotNull(0);
 
     }
@@ -38,7 +38,7 @@ public class CarTest {
     public void testGetName() {
         String name = "";
         Car car = new Car();
-        car.getMake("");
+       // car.getMake("");
         assertNotNull(name);
 
 
@@ -51,7 +51,7 @@ public class CarTest {
     public void testGetModel(){
         String model = "";
         Car car = new Car();
-        car.getModel("");
+       // car.getModel("");
         assertNotNull(model);
 
 
